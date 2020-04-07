@@ -22,14 +22,19 @@ const KeyboardComp = () => {
     setState({ input });
   };
 
+  const timeOutClick = () => {
+    console.log("testing");
+  };
+
   return (
     <div className="keyboardLayout">
       <input
         value={state.input}
-        placeholder={"State are the letter to start"}
+        placeholder={"Stare to the letter for 1.5 sec to start"}
         onChange={onChangeInput}
       />
       <Keyboard
+        className="trigger"
         onChange={(input) => onChange(input)}
         onKeyPress={(button) => onKeyPress(button)}
         layout={{
@@ -45,7 +50,14 @@ const KeyboardComp = () => {
           "{space}": "SPACE",
           "{bksp}": "DELETE",
         }}
+        onMouseEnter={() => console.log("mouse entered")}
       />
+      <div
+        onMouseOver={() => setTimeout(timeOutClick, 3000)}
+        onMouseOut={clearTimeout(timeOutClick)}
+      >
+        [ ]
+      </div>
     </div>
   );
 };

@@ -1,12 +1,14 @@
 import React from "react";
 
 import "./home.scss";
-import KeyboardComp from "../components/keyboardComp";
+// import KeyboardComp from "../components/keyboardComp";
+import KeyboardCustom from "../components/keyboardCustom";
 
 const Home = () => {
   return (
-    <div class="home">
-      <KeyboardComp />
+    <div className="home">
+      {/* <KeyboardComp /> */}
+      <KeyboardCustom />
     </div>
   );
 };
